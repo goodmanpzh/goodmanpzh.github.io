@@ -37,3 +37,120 @@
     "layout/sidebar",
     "layout/json_cv"
 ;
+
+/* ============================================================
+   Custom single-page layout (inspired by pipilurj.github.io)
+   - centered avatar + name + links at the top
+   - single column content below
+   - warm beige background
+   - hidden footer
+   ============================================================ */
+
+/* Warm beige background across the whole site */
+body {
+  background-color: #f5f0e6;
+}
+
+/* Make the main content area a single centered column */
+#main {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+/* Turn the left author sidebar into a centered top block */
+.sidebar.sticky,
+.sidebar {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 auto 1.5em auto !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  clear: both;
+  position: static !important;
+}
+
+.author__avatar {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.author__avatar img {
+  max-width: 175px;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  border: 3px solid #e3d9c2;
+}
+
+.author__content {
+  text-align: center;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.author__name {
+  margin-top: 0.5em;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.author__bio {
+  font-size: 1em;
+  color: #6b6b6b;
+}
+
+/* Center the social/contact icons row under the name */
+.author__urls-wrapper {
+  display: block;
+  text-align: center;
+  width: 100%;
+  float: none;
+}
+
+.author__urls-wrapper button {
+  display: none;   /* hide the "Follow" toggle button on mobile */
+}
+
+.author__urls {
+  display: inline-block !important;
+  position: static !important;
+  width: auto;
+  margin: 0.5em auto 0 auto;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  text-align: center;
+
+  &:before { display: none; }   /* remove the little caret */
+
+  li {
+    white-space: nowrap;
+    display: inline-block;
+    margin: 0 0.4em;
+  }
+}
+
+/* Content column: section headings + sizing closer to pipilurj */
+.page__content {
+  font-size: 16px;
+  line-height: 1.7;
+
+  h1, h2 {
+    border-bottom: 1px solid #e3d9c2;
+    padding-bottom: 0.3em;
+    margin-top: 1.6em;
+  }
+}
+
+/* Hide the page title (we use the centered name instead) */
+.page__title { display: none; }
+
+/* Hide the footer entirely */
+.page__footer { display: none !important; }
