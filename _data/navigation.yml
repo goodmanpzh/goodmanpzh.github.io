@@ -8,14 +8,5 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "Publications"
-    url: /publications/
-
-  - title: "Teaching"
-    url: /teaching/
-
-  - title: "CV"
-    url: /cv/
-
-  # - title: "CV"
-  #   url: /cv-json/
+  # Single-page site: all content lives on the front page (about.md),
+  # so the top navigation is intentionally left empty.
