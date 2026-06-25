@@ -46,9 +46,29 @@
    - hidden footer
    ============================================================ */
 
-/* Warm beige background across the whole site */
+/* Warm beige theme: override the template's CSS variables for BOTH
+   light and dark modes so the whole site (background, header, footer,
+   text) stays consistent regardless of the theme toggle. */
+html,
+html[data-theme="dark"] {
+  --global-bg-color: #f5f0e6;
+  --global-footer-bg-color: #f5f0e6;
+  --global-text-color: #3a3a3a;
+  --global-text-color-light: #6b6b6b;
+  --global-masthead-link-color: #3a3a3a;
+  --global-masthead-link-color-hover: #1a1a1a;
+  --global-border-color: #e3d9c2;
+  --global-dark-border-color: #e3d9c2;
+}
+
 body {
   background-color: #f5f0e6;
+}
+
+/* The top masthead/header bar should match the beige background */
+.masthead {
+  background-color: #f5f0e6;
+  border-bottom: 1px solid #e3d9c2;
 }
 
 /* Make the main content area a single centered column */
