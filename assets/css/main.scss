@@ -133,27 +133,39 @@ body {
   float: none;
 }
 
-.author__urls-wrapper button {
-  display: none;   /* hide the "Follow" toggle button on mobile */
+/* Hide the "Follow" toggle button entirely (it creates a stray box) */
+.author__urls-wrapper button,
+.author__urls-wrapper .btn {
+  display: none !important;
 }
 
+/* The icon list: strip the dropdown box, border, shadow and caret
+   so it's just a clean centered row of icons */
 .author__urls {
   display: inline-block !important;
   position: static !important;
-  width: auto;
-  margin: 0.5em auto 0 auto;
-  padding: 0;
-  border: none;
-  box-shadow: none;
-  background: transparent;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: auto !important;
+  margin: 0.5em auto 0 auto !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
   text-align: center;
 
-  &:before { display: none; }   /* remove the little caret */
+  /* remove BOTH the caret triangle and any border artifact */
+  &:before,
+  &:after {
+    display: none !important;
+    content: none !important;
+    border: 0 !important;
+  }
 
   li {
     white-space: nowrap;
     display: inline-block;
-    margin: 0 0.4em;
+    margin: 0 0.5em;
   }
 }
 
